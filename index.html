@@ -4,21 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Kő Papír Olló Játék</title>
 </head>
 <body>
-    <div id="tarto">
-        <h1>Kő, papír, olló játék</h1>
-        <div id="gombok">
-            <button onclick="k()">Kő</button>
-            <button onclick="p()">Papír</button>
-            <button onclick="o()">Olló</button>
+    <div class="container">
+        <h1>Kő, Papír, Olló Játék</h1>
+        
+        <div class="score-board">
+            <div class="score">
+                <p>Játékos</p>
+                <span id="player-score">0</span>
+            </div>
+            <div class="score">
+                <p>Gép</p>
+                <span id="computer-score">0</span>
+            </div>
         </div>
-        <div id="jatekos"></div>
-        <div id="bot"></div>
-        <div id="eredmeny"></div>
-        <div id="ujra">
-            <button onclick="ujra()">Újra generál</button>
+        
+        <div class="game-area">
+            <div class="choices">
+                <div id="jatekos" class="choice player-choice">
+                    <p>Te választásod</p>
+                    <div class="choice-image"></div>
+                </div>
+                <div class="vs">VS</div>
+                <div id="bot" class="choice computer-choice">
+                    <p>Gép választása</p>
+                    <div class="choice-image"></div>
+                </div>
+            </div>
+            
+            <div id="eredmeny" class="result">Válassz egy lehetőséget</div>
+        </div>
+        
+        <div id="gombok" class="buttons">
+            <button class="choice-btn" onclick="k()"><i class="fas fa-hand-rock"></i> Kő</button>
+            <button class="choice-btn" onclick="p()"><i class="fas fa-hand-paper"></i> Papír</button>
+            <button class="choice-btn" onclick="o()"><i class="fas fa-hand-scissors"></i> Olló</button>
+        </div>
+        
+        <div id="ujra" class="reset">
+            <button onclick="ujra()"><i class="fas fa-redo-alt"></i> Új játék</button>
         </div>
     </div>
     <script src="app.js"></script>
